@@ -9,7 +9,12 @@ import (
 
 func main() {
 	port := ":" + os.Args[1]
-	https := os.Args[2]
+	var https string
+	if len(os.Args) < 3 {
+		https = "http"
+	} else {
+		https = os.Args[2]
+	}
 	fs := http.FileServer(http.Dir("./model"))
 
 	mux := http.NewServeMux()
