@@ -9,6 +9,7 @@ import (
 
 func main() {
 	port := ":" + os.Args[1]
+	https := os.Args[2]
 	fs := http.FileServer(http.Dir("./model"))
 
 	mux := http.NewServeMux()
@@ -24,5 +25,9 @@ func main() {
 		Debug:                  false,
 	})
 	handler := c.Handler(mux) //add CORS support
-	http.ListenAndServe(port, handler)
+	if https == "https" {
+		http.ListenAndServeTLS(port, "server.crt", "server.key", handler)
+	} else {
+		http.ListenAndServe(port, handler)
+	}
 }
