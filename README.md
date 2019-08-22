@@ -18,19 +18,28 @@ cd live2d_api_go
 Linux 386:
 
 ```shell
+http:
 ./server_linux_386 8080
+https:
+./server_linux_386 8080 https
 ```
 
 Mac 386:
 
 ```shell
+http:
 ./server_mac_386 8080
+https:
+./server_mac_386 8080 https
 ```
 
 Windows 386:
 
 ```shell
-server_win_386 8080
+http:
+./server_win_386 8080
+https:
+./server_win_386 8080 https
 ```
 Note: 8080 above is the service port
 
