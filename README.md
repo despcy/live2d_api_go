@@ -9,13 +9,6 @@ https://yangchenxi.github.io/live2d_api_go/
 
 # Usage (Super Easy):
 
-## HTTPS/TLS
-
-If you are using letsencrypt, Please do the following to get the right cert to serve:
-
-1. substitute `server.crt` to `/etc/letsencrypt/live/[name of your website]/cert.pem`
-
-2. substitute `server.key` to `/etc/letsencrypt/live/[name of your website]/privkey.pem`
 
 ## Run:
 
@@ -26,6 +19,14 @@ git clone https://github.com/yangchenxi/live2d_api_go.git
 
 cd live2d_api_go 
 ```
+### HTTPS/TLS
+
+If you are using letsencrypt, Please do the following before you start to get the right cert to serve:
+
+```shell
+cp /etc/letsencrypt/live/[name of your website]/cert.pem server.crt
+cp /etc/letsencrypt/live/[name of your website]/privkey.pem server.key
+ ```
 
 ### Linux 386:
 
